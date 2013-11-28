@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `religions`;
+CREATE TABLE `religions` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id)
+)ENGINE=InnoDB CHARSET=utf8;

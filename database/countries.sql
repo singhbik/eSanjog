@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `countries`;
+CREATE TABLE `countries` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id)
+)ENGINE=InnoDB CHARSET=utf8;

@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `password` CHAR(128) NOT NULL,
+  `public_name` VARCHAR(30) NOT NULL,
+  `first_name` VARCHAR(30),
+  `last_name` VARCHAR(30),
+  `age` INT NOT NULL NOT NULL,
+  `sex` ENUM('Male','Female') NOT NULL,
+  `is_pro` BOOLEAN not null default 0, 
+  `created_by` VARCHAR(30),
+  `religion_id`  INT NOT NULL,
+  `caste_id`  INT NOT NULL,
+  `surname` VARCHAR(30),
+  `city` VARCHAR(30),
+  `state_id` INT NOT NULL,
+  `country_id` INT NOT NULL,
+  `zipcode` INT NOT NULL,
+  `created_ts` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_ts` TIMESTAMP DEFAULT now() ON UPDATE now(),
+  PRIMARY KEY (id),
+  FOREIGN KEY (`religion_id`) REFERENCES religions(`id`),
+  FOREIGN KEY (`caste_id`) REFERENCES castes(`id`),
+  FOREIGN KEY (`country_id`) REFERENCES countries(`id`),
+  FOREIGN KEY (`state_id`) REFERENCES states(`id`)
+)ENGINE=InnoDB CHARSET=utf8;

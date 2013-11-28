@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `castes`;
+CREATE TABLE `castes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  `religion_id` INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (`religion_id`) REFERENCES religions(`id`) ON DELETE CASCADE
+)ENGINE=InnoDB CHARSET=utf8;
